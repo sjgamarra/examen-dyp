@@ -12,9 +12,7 @@ public class LineCalculationDomainService {
 		BigDecimal baseLineCredit = BigDecimal.ZERO;
 		//TODO; yada yada el codigo que hace la validacion entre las deudas del customer y genera una linea base de credito.
 		//TODO: lanzar excepciones de sobregiro, no deuda, peligroso etc.
-		
-		
-		
+			
 		
 		return baseLineCredit;
 	}
