@@ -1,10 +1,16 @@
 package main;
 
 public class FileLogger implements AbstractLogger {
-
+	
+	private FileStream stream;
+	
+	public FileLogger() {
+		this.stream = new FileStream ();
+	}
+	
 	@Override
-	public void registrarLog() {
-		System.out.println("Mira mama log en fichero....");
+	public void registrarLog() {		
+		stream.escribirStream("file file file");
 	}
 
 }

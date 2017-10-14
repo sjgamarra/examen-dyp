@@ -2,8 +2,14 @@ package main;
 
 public class NetworkLogger implements AbstractLogger {
 
+	private SocketStream stream;
+	
+	public NetworkLogger() {
+		this.stream = new SocketStream();
+	}
+	
 	@Override
 	public void registrarLog() {
-		System.out.println("Mira mama log en network....");
+		stream.escribirStream("net net net");
 	}
 }

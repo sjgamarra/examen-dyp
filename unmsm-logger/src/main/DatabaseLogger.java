@@ -1,11 +1,16 @@
 package main;
 
 public class DatabaseLogger implements AbstractLogger {
+
+	private DatabaseStream stream;
 	
+	public DatabaseLogger() {
+		this.stream = new DatabaseStream ();
+	}
 
 	@Override
 	public void registrarLog() {
-		System.out.println("Mira mama log en base de datos....");
+		stream.escribirStream("data data data");
 		
 	}
 
