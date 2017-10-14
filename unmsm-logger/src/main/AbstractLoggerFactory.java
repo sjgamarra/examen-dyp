@@ -2,6 +2,6 @@ package main;
 
 public interface AbstractLoggerFactory {
 
-	public AbstractLogger crearLogger(AbstractStream s);
+	public AbstractLogger crearLogger(StreamEnum e);
 	
 }

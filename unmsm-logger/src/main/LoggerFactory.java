@@ -3,20 +3,24 @@ package main;
 public class LoggerFactory implements AbstractLoggerFactory{
 
 	@Override
-	public AbstractLogger crearLogger(AbstractStream stream) {
+	public AbstractLogger crearLogger(StreamEnum e) {
 		AbstractLogger logger = null; //:O
-		if(stream.getClass().equals(FileStream.class)){
-			logger = new FileLogger();
-		}
-		
-		if(stream.getClass().equals(DatabaseStream.class)){
-			logger = new DatabaseLogger();
-		}
-		
-		if(stream.getClass().equals(SocketStream.class)){
-			logger = new NetworkLogger();
+		switch(e){
+			case FILE:
+				logger = new FileLogger();
+				break;
+			case DATABASE:
+				logger = new DatabaseLogger();
+				break;
+			case NETWORK:
+				logger = new NetworkLogger();
+				break;
+			default:
+				break;
 		}
 		return logger;
 	}
+	
+	
 
 }

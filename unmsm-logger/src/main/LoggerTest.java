@@ -3,14 +3,15 @@ package main;
 public class LoggerTest {
 	
 	public static void main(String[] args) {
-		AbstractLoggerFactory factory = new LoggerFactory();
-		AbstractLogger logger = factory.crearLogger(new FileStream());
+		AbstractLoggerFactory factory = new LoggerFactory();	
+		
+		AbstractLogger logger = factory.crearLogger(StreamEnum.FILE);
 		logger.registrarLog();
 		
-		logger = factory.crearLogger(new DatabaseStream());
+		logger = factory.crearLogger(StreamEnum.DATABASE);
 		logger.registrarLog();
 		
-		logger = factory.crearLogger(new SocketStream());
+		logger = factory.crearLogger(StreamEnum.NETWORK);
 		logger.registrarLog();
 		
 	}
